@@ -13,59 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aiden.aiden.architecturepatternstudy.data.source
 
 import com.aiden.aiden.architecturepatternstudy.api.model.TickerResponse
-import com.aiden.aiden.architecturepatternstudy.data.source.local.UpbitLocalDataSource
-import com.aiden.aiden.architecturepatternstudy.data.source.remote.UpbitRemoteDataSource
 
-class UpbitRepository(
-    private val remoteDataSource: UpbitRemoteDataSource,
-    private val localDataSource: UpbitLocalDataSource
-) : UpbitDataSource {
+interface UpbitRepository {
 
-    override fun getMarketList(
+    fun getMarketList(
         onSuccess: (List<String>) -> Unit,
         onFail: (Throwable?) -> Unit
-    ) {
-        remoteDataSource.getMarketList(onSuccess, onFail)
-    }
+    )
 
-    override fun getTickerList(
+    fun getTickerList(
         marketList: List<String>,
-        isUsingLocalDb: Boolean,
+        isUsingLocalDB: Boolean,
         onSuccess: (List<TickerResponse>) -> Unit,
         onFail: (Throwable?) -> Unit
-    ) {
-
-        when (isUsingLocalDb) {
-
-            true -> {
-                localDataSource.getTickerList(
-                    marketList,
-                    true,
-                    onSuccess,
-                    onFail
-                )
-            }
-
-            false -> {
-                remoteDataSource.getTickerList(
-                    marketList,
-                    false,
-                    onSuccess = {
-                        localDataSource.saveTickerList(
-                            it,
-                            onSuccess = onSuccess,
-                            onFail = onFail
-                        )
-                    },
-                    onFail = onFail
-                )
-            }
-
-        }
-
-    }
+    )
 
 }

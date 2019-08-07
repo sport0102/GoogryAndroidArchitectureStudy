@@ -32,4 +32,10 @@ interface UpbitDataSource {
         onFail: (Throwable?) -> Unit
     )
 
+    fun saveTickerList(
+        tickerList: List<TickerResponse>,
+        onSuccess: (List<TickerResponse>) -> Unit,
+        onFail: (Throwable?) -> Unit
+    )
+
 }

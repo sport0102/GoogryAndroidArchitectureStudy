@@ -29,7 +29,7 @@ class UpbitLocalDataSource(private val db: UpbitDatabase?) : UpbitDataSource {
 
     }
 
-    fun saveTickerList(
+    override fun saveTickerList(
         tickerList: List<TickerResponse>,
         onSuccess: (List<TickerResponse>) -> Unit,
         onFail: (Throwable?) -> Unit

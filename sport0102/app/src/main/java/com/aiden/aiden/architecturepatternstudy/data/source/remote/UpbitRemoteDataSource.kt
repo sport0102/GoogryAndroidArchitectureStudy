@@ -76,6 +76,14 @@ class UpbitRemoteDataSource(
 
     }
 
+    override fun saveTickerList(
+        tickerList: List<TickerResponse>,
+        onSuccess: (List<TickerResponse>) -> Unit,
+        onFail: (Throwable?) -> Unit
+    ) {
+        // do not use
+    }
+
 
 }
 
