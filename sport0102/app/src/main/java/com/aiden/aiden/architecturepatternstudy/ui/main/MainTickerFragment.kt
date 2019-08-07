@@ -14,7 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainTickerFragment :
-    BaseFragment<FragmentTickerMainBinding, MainViewModel>(R.layout.fragment_ticker_main) {
+    BaseFragment<FragmentTickerMainBinding, MainTickerViewModel>(R.layout.fragment_ticker_main) {
 
     private lateinit var marketName: String
 
@@ -22,7 +22,7 @@ class MainTickerFragment :
 
     private val mainSearchVm by sharedViewModel<MainSearchViewModel>()
 
-    override val viewModel by viewModel<MainViewModel>()
+    override val viewModel by viewModel<MainTickerViewModel>()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
 

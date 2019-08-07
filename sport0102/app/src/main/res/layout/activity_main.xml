@@ -7,7 +7,7 @@
 
 		<variable
 			name="mainViewModel"
-			type="com.aiden.aiden.architecturepatternstudy.ui.main.MainViewModel" />
+			type="com.aiden.aiden.architecturepatternstudy.ui.main.MainTickerViewModel" />
 
 	</data>
 

@@ -7,7 +7,7 @@ import com.aiden.aiden.architecturepatternstudy.api.model.TickerResponse
 import com.aiden.aiden.architecturepatternstudy.data.source.UpbitRepository
 import com.aiden.aiden.architecturepatternstudy.util.StringUtil
 
-class MainViewModel(private val upbitRepository: UpbitRepository) : ViewModel() {
+class MainTickerViewModel(private val upbitRepository: UpbitRepository) : ViewModel() {
 
     private val _tickerList = MutableLiveData<List<TickerResponse>>()
     val tickerList: LiveData<List<TickerResponse>> get() = _tickerList

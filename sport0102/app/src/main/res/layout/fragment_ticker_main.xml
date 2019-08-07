@@ -8,7 +8,7 @@
 
 		<variable
 			name="vm"
-			type="com.aiden.aiden.architecturepatternstudy.ui.main.MainViewModel" />
+			type="com.aiden.aiden.architecturepatternstudy.ui.main.MainTickerViewModel" />
 
 	</data>
 
